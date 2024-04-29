@@ -145,10 +145,19 @@ section > a:hover{
 }
 
 .posts-box{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     margin: 10px 0;
     padding: 0 10px;
+}
+
+.showcase{
+    display: flex;
+    overflow: hidden;
+    padding: 0 10px;
+    margin: 10px 0;
+    gap: 10px;
 }
 
 .post{
