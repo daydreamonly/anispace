@@ -149,8 +149,6 @@ section > a:hover{
     gap: 10px;
     margin: 10px 0;
     padding: 0 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .post{
