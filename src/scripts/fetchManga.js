@@ -1,11 +1,6 @@
 const mangaShowcase = document.querySelector("#mangaTopBox");
 const mangaContainer = document.querySelector("#mangaBox");
 
-const navbar = document.querySelector("#navbar");
-window.addEventListener("scroll", () => {
-    navbar.classList.toggle("fixed", window.scrollY > 0);
-});
-
 mangaShowcase.addEventListener("wheel", (e) => {
     e.preventDefault();
     mangaShowcase.scrollLeft += e.deltaY;

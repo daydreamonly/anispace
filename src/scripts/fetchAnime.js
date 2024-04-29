@@ -1,9 +1,5 @@
-const navbar = document.querySelector("#navbar");
-window.addEventListener("scroll", () => {
-    navbar.classList.toggle("fixed", window.scrollY > 0);
-});
-
 const animeShowcase = document.querySelector("#animeTopBox");
+
 animeShowcase.addEventListener("wheel", (e) => {
     e.preventDefault();
     animeShowcase.scrollLeft += e.deltaY;

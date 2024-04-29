@@ -235,6 +235,8 @@ section > a:hover{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .news-post{
@@ -252,11 +254,27 @@ section > a:hover{
     color: var(--text-color);
 }
 
-.news-box{
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
 .news-img{
     width: 400px;
+}
+
+.news-button{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    font-size: 12px;
+    width: 300px;
+    background-color: var(--dark-color);
+    color: #fff;
+    border: 1px solid #fff;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    align-self: center;
+}
+
+.news-button:hover{
+    color: var(--text-color);    
+    border: 1px solid var(--text-color);
+    background-color: var(--gray-color);
 }
