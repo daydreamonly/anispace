@@ -24,11 +24,11 @@ const createAnime = async (url, arr, container) => {
 
         output = `
             <div class="post-card">
-                <a href="${url}" target="_blank" class="post">
+                <a href="redirectPage.html" class="post">
                     <img class="post-img" src="${jpg.image_url}" alt="">
                     <h4 class="post-title">${title}</h4>
                 </a>
-                <a href="${url}" target="_blank">
+                <a href="redirectPage.html">
                     <div class="post-info">
                         <div class="info truncate-text-2">${title}</div>
                         <p class="truncate-text">${synopsis}</p>

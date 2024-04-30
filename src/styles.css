@@ -7,12 +7,17 @@
     font-family: Roboto;
 }
 
+ul,ol,li{
+    list-style-type: none;
+}
+
 :root{
     --primary-color: #7a5af5;
     --primary-color-400: #ad8ffa;
     --dark-color: #121212;
     --gray-color: #3f3f3f;
     --text-color: #cab4fd;
+    --light-color: #8d8d8d;
 }
 
 a{
@@ -278,4 +283,43 @@ section > a:hover{
     color: var(--text-color);    
     border: 1px solid var(--text-color);
     background-color: var(--gray-color);
+}
+
+.anime-info{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+    font-weight: 200;
+    width: 400px;
+}
+
+.anime-info > img{
+    width: 200px;
+    height: 250px;
+}
+
+.anime-about{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.anime-about > li > span{
+    color: var(--light-color);
+    font-weight: bold;
+}
+
+.content-container{
+    width: 85vw;
+    height: 70vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.video{
+    margin: 10px;
+    width: 1200px;
+    height: 600px;
 }
