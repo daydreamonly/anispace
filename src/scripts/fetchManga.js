@@ -21,6 +21,14 @@ const createManga = async (url, arr, container) => {
             manga;
         const { jpg } = images;
 
+        let genresList = " ";
+        genres.forEach((genre, index) => {
+            genresList += genre.name;
+            if (index < genres.length - 1) {
+                genresList += " ";
+            }
+        });
+
         output = `
             <div class="post-card">
                 <a href="${url}" target="_blank" class="post">
@@ -30,7 +38,7 @@ const createManga = async (url, arr, container) => {
                 <a href="${url}" target="_blank">
                     <div class="post-info">
                         <div class="info truncate-text-2">${title}</div>
-                        <p class="truncate-text">${synopsis}</p>
+                        <p class="truncate-text-2">${synopsis}</p>
                         <div class="info">
                             <p>Authors:</p>
                             <a href="#">${authors[0].name}</a>
@@ -41,7 +49,7 @@ const createManga = async (url, arr, container) => {
                         </div>
                         <div class="info">
                             <p>Genre:</p>
-                            <div>${genres[0].name}</div>
+                            <div>${genresList}</div>
                         </div>
                     </div>
                 </a>

@@ -16,22 +16,36 @@ const createAnime = async (url, arr, container) => {
     let output = "";
 
     arr.forEach((anime) => {
-        const { title, synopsis, studios, episodes, genres, url, images } =
-            anime;
+        const {
+            title,
+            synopsis,
+            studios,
+            episodes,
+            genres,
+            url,
+            images,
+            mal_id,
+        } = anime;
         const { jpg } = images;
 
-        console.log();
+        let genresList = " ";
+        genres.forEach((genre, index) => {
+            genresList += genre.name;
+            if (index < genres.length - 1) {
+                genresList += " ";
+            }
+        });
 
         output = `
-            <div class="post-card">
-                <a href="redirectPage.html" class="post">
+            <div class="post-card" data-id='${mal_id}'>
+                <a href="redirectPage.html?mal_id=${mal_id}" class="post">
                     <img class="post-img" src="${jpg.image_url}" alt="">
                     <h4 class="post-title">${title}</h4>
                 </a>
-                <a href="redirectPage.html">
+                <a href="redirectPage.html?mal_id=${mal_id}">
                     <div class="post-info">
                         <div class="info truncate-text-2">${title}</div>
-                        <p class="truncate-text">${synopsis}</p>
+                        <p class="truncate-text-2">${synopsis}</p>
                         <div class="info">
                             <p>Studio:</p>
                             <a href="#">${studios[0].name}</a>
@@ -42,7 +56,7 @@ const createAnime = async (url, arr, container) => {
                         </div>
                         <div class="info">
                             <p>Genre:</p>
-                            <div>${genres[0].name}</div>
+                            <div>${genresList}</div>
                         </div>
                     </div>
                 </a>

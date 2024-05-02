@@ -50,8 +50,10 @@ body{
     background-color: var(--gray-color);
 }
 
-.navbar h1{
+.nav-title{
     margin-left: 20px;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .dropBtn{
@@ -236,6 +238,13 @@ section > a:hover{
     overflow: hidden;
 }
 
+.truncate-text-18{
+    display: -webkit-box;
+    -webkit-line-clamp: 18;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .news-box{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -312,7 +321,7 @@ section > a:hover{
 
 .content-container{
     width: 85vw;
-    height: 70vh;
+    height: 90vh;
     justify-content: center;
     display: flex;
     flex-direction: row;
