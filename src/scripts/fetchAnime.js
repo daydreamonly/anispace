@@ -1,10 +1,3 @@
-const animeShowcase = document.querySelector("#animeTopBox");
-
-animeShowcase.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    animeShowcase.scrollLeft += e.deltaY;
-});
-
 let animeArr = [];
 let animeTopArr = [];
 
@@ -48,11 +41,15 @@ const createAnime = async (url, arr, container) => {
                         <p class="truncate-text-2">${synopsis}</p>
                         <div class="info">
                             <p>Studio:</p>
-                            <a href="#">${studios[0].name}</a>
+                            <a href="redirectPage.html?mal_id=${mal_id}">${
+            studios[0].name
+        }</a>
                         </div>
                         <div class="info">
                             <p>Episodes:</p>
-                            <div>${episodes}ep</div>
+                            <div>${
+                                episodes == null ? "No info" : `${episodes}ep`
+                            }</div>
                         </div>
                         <div class="info">
                             <p>Genre:</p>

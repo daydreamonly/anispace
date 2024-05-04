@@ -332,3 +332,69 @@ section > a:hover{
     width: 1200px;
     height: 600px;
 }
+
+.control-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.controller{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10px;
+    align-items: center;
+    position: relative;
+}
+
+.control-btn{
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--dark-color);
+    color: #fff;
+    border: 1px solid #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.control-btn:hover{
+    background-color: #fff;
+    color: var(--dark-color);
+}
+
+.episode-controll{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 1050px;
+}
+
+.episode-find{
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: normal;
+    background-color: var(--dark-color);
+}
+
+.episode-list{
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.episode-list > li{
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.episode-list > li:hover{
+    background-color: #fff;
+    color: var(--dark-color);
+}
+
+.active{
+    background-color: #fff;
+    color: var(--dark-color);
+}

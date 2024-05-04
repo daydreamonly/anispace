@@ -1,10 +1,9 @@
-const mangaShowcase = document.querySelector("#mangaTopBox");
 const mangaContainer = document.querySelector("#mangaBox");
 
-mangaShowcase.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    mangaShowcase.scrollLeft += e.deltaY;
-});
+// mangaShowcase.addEventListener("wheel", (e) => {
+//     e.preventDefault();
+//     mangaShowcase.scrollLeft += e.deltaY;
+// });
 
 let mangaArr = [];
 let mangaTopArr = [];
@@ -45,7 +44,9 @@ const createManga = async (url, arr, container) => {
                         </div>
                         <div class="info">
                             <p>Chapters:</p>
-                            <div>${chapters}chp</div>
+                            <div>${
+                                chapters == null ? "No info" : `${chapters}chp`
+                            }</div>
                         </div>
                         <div class="info">
                             <p>Genre:</p>
