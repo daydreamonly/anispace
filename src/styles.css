@@ -398,3 +398,11 @@ section > a:hover{
     background-color: #fff;
     color: var(--dark-color);
 }
+
+.filter{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    gap: 10px;
+    border: none;
+}
