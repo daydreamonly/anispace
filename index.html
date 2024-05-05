@@ -4,26 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles.css">
-    <script defer src="src/scripts/navbar.js"></script>
-    <script defer src="src/scripts/fetchAnime.js"></script>
-    <script defer src="src/scripts/scroll.js"></script>
+    <!-- <script defer src="src/scripts/navbar.js"></script> -->
+    <!-- <script defer src="src/scripts/fetchAnime.js"></script> -->
+    <!-- <script defer src="src/scripts/scroll.js"></script> -->
+    <script defer src="src/scripts/script.js"></script>
     <title>Anispace</title>
 </head>
 <body>
     <header class="container">
-        <nav id="navbar" class="navbar">
-            <a class="nav-title" href="index.html">ANISPACE</a>
-            <div class="dropdown">
-                <button class="dropBtn">Anime</button>
-                <div class="dropdown-content">
-                    <a class="link" href="index.html">Anime</a>
-                    <a class="link" href="manga.html">Manga</a>
-                    <a class="link" href="news.html">News</a>
+        <div class="recommendation-carousel">
+            <div class="recommendation active">
+                <img class="rec-img" src="src/img/1.jpg" alt="">
+                <div class="rec-info">
+                    <h3 class="rec-rating">#9 Spotlight</h3>
+                    <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
+                    <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
+                    <button class="rec-btn">Watch Now</button>
                 </div>
             </div>
-            <input class="input" type="text" placeholder="Find">
-            <a href="#" class="sign-up link">Вход</a>
-        </nav>
+            <div class="recommendation">
+                <img class="rec-img" src="src/img/collectionBg.jpg" alt="">
+                <div class="rec-info">
+                    <h3 class="rec-rating">#9 Spotlight</h3>
+                    <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
+                    <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
+                    <button class="rec-btn">Watch Now</button>
+                </div>
+            </div>
+            <div class="recommendation">
+                <img class="rec-img" src="src/img/1.jpg" alt="">
+                <div class="rec-info">
+                    <h3 class="rec-rating">#9 Spotlight</h3>
+                    <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
+                    <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
+                    <button class="rec-btn">Watch Now</button>
+                </div>
+            </div>
+            <div class="rec-buttons">
+                <button id="prevBtn" class="rec-btn">&#10094;</button>
+                <button id="nextBtn" class="rec-btn">&#10095;</button>
+            </div>
+        </div>
     </header>
 
     <section>

@@ -1,54 +1,32 @@
-const BASE_URL = "https://api.jikan.moe/v4/anime";
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+const carousel = document.querySelector(".recommendation-carousel");
+let recList = Array.from(carousel.querySelectorAll(".recommendation"));
+let index = 0;
 
-let startIndex = 0;
-let endIndex = 5;
-let animeArr = [];
-let mangaArr = [];
+nextBtn.addEventListener("click", () => {
+    for (let i = 0; i < recList.length; i++) {
+        if (
+            recList[i].className == "active" &&
+            recList[i] < recList.length - 1
+        ) {
+            recList[i].classList.remove("active");
+            recList[i + 1].classList.add("active");
+            console.log("next");
+            break;
+        }
+    }
+});
 
-const fetchData = async () => {
-    const res = await fetch(BASE_URL);
-    const data = await res.json();
-    animeArr = data.data;
-    fetchAnime(animeArr);
-};
+prevBtn.addEventListener("click", () => {
+    for (let i = 0; i < recList.length; i++) {
+        if (recList[i].className == "active" && recList[i] > 0) {
+            recList[i].classList.remove("active");
+            recList[i - 1].classList.add("active");
+            console.log("prev");
+            break;
+        }
+    }
+});
 
-const fetchAnime = (arr) => {
-    let output = "";
-
-    arr.forEach((anime) => {
-        const { title, synopsis, studios, episodes, genres, url, images } =
-            anime;
-        const { jpg } = images;
-
-        output = `
-            <div class="post-card">
-                <a href="${url}" target="_blank" class="post">
-                    <img class="post-img" src="${jpg.image_url}" alt="">
-                    <h4 class="post-title">${title}</h4>
-                </a>
-                <a href="${url}" target="_blank">
-                    <div class="post-info">
-                        <div class="info">${title}</div>
-                        <p class="truncate-text">${synopsis}</p>
-                        <div class="info">
-                            <p>Studio:</p>
-                            <a href="#">${studios[0].name}</a>
-                        </div>
-                        <div class="info">
-                            <p>Episodes:</p>
-                            <div>${episodes}ep</div>
-                        </div>
-                        <div class="info">
-                            <p>Genre:</p>
-                            <div>${genres[0].name}</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        `;
-
-        document.getElementById("postsBox").innerHTML += output;
-    });
-};
-
-fetchData();
+console.log("hello");
