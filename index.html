@@ -5,51 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles.css">
     <!-- <script defer src="src/scripts/navbar.js"></script> -->
-    <!-- <script defer src="src/scripts/fetchAnime.js"></script> -->
+    <script defer src="src/scripts/fetchAnime.js"></script>
     <!-- <script defer src="src/scripts/scroll.js"></script> -->
-    <script defer src="src/scripts/script.js"></script>
+    <script defer src="./src/scripts/script.js"></script>
     <title>Anispace</title>
 </head>
 <body>
     <header class="container">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">ANISPACE</a>
+                <input class="nav-input" type="text">
+            </div>
+            <div class="nav-right">
+                <div class="login">Вход</div>
+            </div>
+        </nav>
+        
         <div class="recommendation-carousel">
             <div class="recommendation active">
                 <img class="rec-img" src="src/img/1.jpg" alt="">
                 <div class="rec-info">
-                    <h3 class="rec-rating">#9 Spotlight</h3>
+                    <h3 class="rec-rating">#1 Spotlight</h3>
                     <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
                     <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
-                    <button class="rec-btn">Watch Now</button>
+                    <button class="btn">Смотреть</button>
                 </div>
             </div>
             <div class="recommendation">
                 <img class="rec-img" src="src/img/collectionBg.jpg" alt="">
                 <div class="rec-info">
-                    <h3 class="rec-rating">#9 Spotlight</h3>
+                    <h3 class="rec-rating">#2 Spotlight</h3>
                     <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
                     <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
-                    <button class="rec-btn">Watch Now</button>
+                    <button class="btn">Смотреть</button>
                 </div>
             </div>
             <div class="recommendation">
-                <img class="rec-img" src="src/img/1.jpg" alt="">
+                <img class="rec-img" src="src/img/profileBg.jpg" alt="">
                 <div class="rec-info">
-                    <h3 class="rec-rating">#9 Spotlight</h3>
+                    <h3 class="rec-rating">#3 Spotlight</h3>
                     <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
                     <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
-                    <button class="rec-btn">Watch Now</button>
+                    <button class="btn">Смотреть</button>
+                </div>
+            </div>
+            <div class="recommendation">
+                <img class="rec-img" src="src/img/shopBg.jfif" alt="">
+                <div class="rec-info">
+                    <h3 class="rec-rating">#4 Spotlight</h3>
+                    <h2 class="rec-title">mushoku tensei jobless reincarnation season 2</h2>
+                    <p class="rec-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit illo quibusdam non repellat architecto iure distinctio neque, totam rerum, omnis dignissimos enim adipisci? Exercitationem ducimus dolorum vel, molestias quam modi voluptatibus eligendi illo molestiae voluptates quae repudiandae. Repellat, optio cum.</p>
+                    <button class="btn">Смотреть</button>
                 </div>
             </div>
             <div class="rec-buttons">
-                <button id="prevBtn" class="rec-btn">&#10094;</button>
-                <button id="nextBtn" class="rec-btn">&#10095;</button>
+                <button id="prevBtn" class="btn">&#10094;</button>
+                <button id="nextBtn" class="btn">&#10095;</button>
             </div>
         </div>
     </header>
 
-    <section>
+    <!-- <section>
         <a href="#">Ongoing</a>
         <div id="postsBox" class="posts-box">
+            <div class="post-card">
+                <a href="${url}" target="_blank" class="post">
+                    <img class="post-img" src="${jpg.image_url}" alt="">
+                    <h4 class="post-title">${title}</h4>
+                </a>
+                <a href="${url}" target="_blank">
+                    <div class="post-info">
+                        <div class="info">${title}</div>
+                        <p class="truncate-text">${synopsis}</p>
+                        <div class="info">
+                            <p>Studio:</p>
+                            <a href="#">${studios[0].name}</a>
+                        </div>
+                        <div class="info">
+                            <p>Episodes:</p>
+                            <div>${episodes}ep</div>
+                        </div>
+                        <div class="info">
+                            <p>Genre:</p>
+                            <div>${genres[0].name}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section> -->
+    
+    <section class="container">
+        <h1 class="trend-title">Популярные</h1>
+        <div id="trendBox" class="trend-box">
+            <div id="trendContent" class="trend-content"></div>
             <!-- <div class="post-card">
                 <a href="${url}" target="_blank" class="post">
                     <img class="post-img" src="${jpg.image_url}" alt="">
@@ -74,36 +124,253 @@
                     </div>
                 </a>
             </div> -->
+            <div class="trend-buttons">
+                <button id="trendPrevBtn" class="btn">&#10094;</button>
+                <button id="trendNextBtn" class="btn">&#10095;</button>
+            </div>
         </div>
     </section>
-    
-    <section>
-        <a href="#">Anime Top</a>
-        <div id="animeTopBox" class="showcase">
-            <!-- <div class="post-card">
-                <a href="${url}" target="_blank" class="post">
-                    <img class="post-img" src="${jpg.image_url}" alt="">
-                    <h4 class="post-title">${title}</h4>
-                </a>
-                <a href="${url}" target="_blank">
-                    <div class="post-info">
-                        <div class="info">${title}</div>
-                        <p class="truncate-text">${synopsis}</p>
-                        <div class="info">
-                            <p>Studio:</p>
-                            <a href="#">${studios[0].name}</a>
-                        </div>
-                        <div class="info">
-                            <p>Episodes:</p>
-                            <div>${episodes}ep</div>
-                        </div>
-                        <div class="info">
-                            <p>Genre:</p>
-                            <div>${genres[0].name}</div>
+
+    <section class="container">
+        <div class="grid">
+            <div class="grid-box">
+                <h3>Добавленные</h3>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
                         </div>
                     </div>
-                </a>
-            </div> -->
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="card-btn">Смотреть еще &#10095;</button>
+            </div>
+            <div class="grid-box">
+                <h3>Вышедшие</h3>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="card-btn">Смотреть еще &#10095;</button>
+            </div>
+            <div class="grid-box">
+                <h3>Выходящие</h3>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="card-btn">Смотреть еще &#10095;</button>
+            </div>
+            <div class="grid-box">
+                <h3>Завершенные</h3>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-card">
+                        <img class="card-img" src="/src/img/1.webp" alt="Title">
+                        <div class="card-info">
+                            <div class="card-title">Hibike! Euphonium</div>
+                            <div>Ep: 12/12</div>
+                            <div>23min</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="card-btn">Смотреть еще &#10095;</button>
+            </div>
+        </div>
+    </section>
+    <section class="container flex">
+        <div class="recently-box">
+            <h2 class="recent-title">Онгоинг</h2>
+            <div id="recentlyBox" class="recent-content">
+
+            </div>
+        </div>
+        <div class="genres-box">
+            <h2 class="genre-title">Жанры</h2>
+            <ul class="genres-list">
+                <li class="genre">Экшн</li>
+                <li class="genre">Приключения</li>
+                <li class="genre">Драма</li>
+                <li class="genre">Этти</li>
+                <li class="genre">Меха</li>
+                <li class="genre">Хоррор</li>
+                <li class="genre">Мистика</li>
+                <li class="genre">Музыка</li>
+                <li class="genre">Магия</li>
+            </ul>
         </div>
     </section>
 </body>

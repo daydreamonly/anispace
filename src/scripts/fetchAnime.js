@@ -23,7 +23,7 @@ const createAnime = async (url, arr, container) => {
 
         let genresList = " ";
         genres.forEach((genre, index) => {
-            genresList += genre.name;
+            `<li>${genre.name}</li>`;
             if (index < genres.length - 1) {
                 genresList += " ";
             }
@@ -38,22 +38,26 @@ const createAnime = async (url, arr, container) => {
                 <a href="redirectPage.html?mal_id=${mal_id}">
                     <div class="post-info">
                         <div class="info truncate-text-2">${title}</div>
-                        <p class="truncate-text-2">${synopsis}</p>
+                        <p class="truncate-text-4">${synopsis}</p>
                         <div class="info">
                             <p>Studio:</p>
-                            <a href="redirectPage.html?mal_id=${mal_id}">${
+                            <a href="redirectPage.html?mal_id=${mal_id}"> &nbsp; ${
             studios[0].name
         }</a>
                         </div>
                         <div class="info">
                             <p>Episodes:</p>
-                            <div>${
+                            <div> &nbsp; ${
                                 episodes == null ? "No info" : `${episodes}ep`
                             }</div>
                         </div>
                         <div class="info">
                             <p>Genre:</p>
-                            <div>${genresList}</div>
+                            <ul class='genres-ul'>${genres
+                                .map((genre) => {
+                                    return `<li>${genre.name}</li>`;
+                                })
+                                .join("")}</ul>
                         </div>
                     </div>
                 </a>
@@ -64,5 +68,5 @@ const createAnime = async (url, arr, container) => {
     });
 };
 
-createAnime("https://api.jikan.moe/v4/seasons/now", animeArr, "postsBox");
-createAnime("https://api.jikan.moe/v4/top/anime", animeTopArr, "animeTopBox");
+createAnime("https://api.jikan.moe/v4/top/anime", animeTopArr, "trendContent");
+createAnime("https://api.jikan.moe/v4/seasons/now", animeTopArr, "recentlyBox");
