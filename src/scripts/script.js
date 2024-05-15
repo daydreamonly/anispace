@@ -2,56 +2,79 @@ const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
 const carousel = document.querySelector(".recommendation-carousel");
 let slides = Array.from(carousel.querySelectorAll(".recommendation"));
+let counter = 0;
+
+
+
 
 function nextSlide() {
-    for (let i = 0; i < slides.length; i++) {
-        if (slides[i].classList.contains("active") && i < slides.length - 1) {
-            slides.forEach((slide) => {
-                slide.classList.remove("active", "slide-left", "slide-right");
-            });
-            slides[i + 1].classList.add("active", "slide-left");
-            break;
-        }
-
-        if (i == slides.length - 1) {
-            slides.forEach((slide) => {
-                slide.classList.remove("active", "slide-left", "slide-right");
-            });
-            slides[0].classList.add("active", "slide-left");
-        }
+    if (counter < slides.length) {
+        counter++;
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(-${counter * 100}%)`;
+        });
+    }
+    if (counter == slides.length) {
+        slides.forEach((slide) => {
+            counter = 0;
+            slide.style.transform = `translateX(0%)`;
+        });
     }
 }
 
 function prevSlide() {
-    let isFistSlide = false;
-    for (let i = 0; i < slides.length; i++) {
-        if (slides[i].classList.contains("active") && i > 0) {
-            slides.forEach((slide) => {
-                slide.classList.remove("active", "slide-left", "slide-right");
-            });
-            slides[i - 1].classList.add("active", "slide-right");
-            isFistSlide = true;
-            break;
-        }
+    let isFirstSlide = false;
+
+    if (counter < slides.length && counter != 0) {
+        isFirstSlide = true;
+        counter--;
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(-${counter * 100}%)`;
+        });
     }
 
-    if (!isFistSlide) {
+    if (!isFirstSlide) {
+        counter = slides.length - 1;
         slides.forEach((slide) => {
-            slide.classList.remove("active", "slide-left", "slide-right");
+            slide.style.transform = `translateX(-${counter * 100}%)`;
         });
-        slides[slides.length - 1].classList.add("active", "slide-right");
     }
 }
 
 nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
-setInterval(nextSlide, 3000);
 
 function scrollHandler(container) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
     container.addEventListener("wheel", (e) => {
         e.preventDefault();
         container.scrollLeft += e.deltaY;
     });
+
+    container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.offsetLeft
+    })
+    
+    container.addEventListener('mouseleave', () => {
+        isDown = false;
+    })
+    
+    container.addEventListener('mouseup', () => {
+        isDown = false;
+    })
+    
+    container.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX);
+        container.scrollLeft = scrollLeft - walk
+    })
 }
 
 scrollHandler(document.querySelector("#trendContent"));
