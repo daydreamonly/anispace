@@ -8,16 +8,25 @@
     <!-- <script defer src="src/scripts/navbar.js"></script> -->
     <script defer src="src/scripts/fetchAnime.js"></script>
     <!-- <script defer src="src/scripts/scroll.js"></script> -->
+    <script defer src="./src/scripts/search.js"></script>
     <script defer src="./src/scripts/script.js"></script>
     <title>Anispace</title>
 </head>
+
+<!-- ⢸⣿⣿⣿⣿⡿⠛⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣶⣾⣿⣿⡿⢋⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣿⣿⡿⠋⠴⠋⠀⠀⣠⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣷⣦⣤⡀⠀⠀⠀⠀⠀⠀⠀ ⣿⡟⠁⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀ ⠟⠀⠀⠀⠀⠀⠀⠛⠉⠉⠉⠉⠙⢿⣿⣿⣿⠟⠛⠋⠉⠉⠛⠛⠁⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣶⣶⣶⣾⣿⣿⣿⣶⣶⣴⣶⣶⣶⣄⠀⢰⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⢀⣾⠟⣉⡙⢛⣿⣿⣿⣿⣿⣿⣿⣿⣛⡭⢍⡙⢿⣷⠀⡇⠀⠀⠀ ⠀⠀⠀⠀⠀⣼⣿⠘⠧⠀⣠⣟⣽⠋⢨⣿⡏⢻⣍⣛⣀⠠⣟⣰⣿⣿⣷⠀⠀⠀ ⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡇⠀⢸⣿⣇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀ ⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣧⡶⢿⣿⡿⢷⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀ ⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⡿⠛⠸⣿⠄⠿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀ ⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⠏⠀⣠⣤⣤⣤⡀⠙⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠉⠉⣿⣿⠁⠀⣸⡋⠀⠀⠉⢿⠄⠈⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠸⠗⠀⢠⣿⡇⠀⠀⠀⣾⣇⠀⢺⣿⠟⠉⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⣤⡀⠀⠀⢀⣧⢰⣄⠘⡷⠀
+            ⢸⣷⣙⡛⠛⠚⣻⣯⣿
+ -->
 
 <body>
     <header class="container">
         <nav class="navbar">
             <div class="nav-left">
                 <a href="index.html" class="nav-logo">ANISPACE</a>
-                <input class="nav-input" type="text">
+                <div class="search-container">
+                    <form id="searchForm">
+                        <input id="searchInput" class="nav-input" type="text">
+                    </form>
+                </div>
             </div>
             <div class="nav-right">
                 <div class="login">Вход</div>
@@ -138,7 +147,6 @@
                     </div>
                 </a>
             </div> -->
-
         </div>
     </section>
 
@@ -176,21 +184,13 @@
         </div>
         <div class="genres-box">
             <h2 class="genre-title">Жанры</h2>
-            <ul class="genres-list">
-                <li class="genre">Экшн</li>
-                <li class="genre">Приключения</li>
-                <li class="genre">Драма</li>
-                <li class="genre">Этти</li>
-                <li class="genre">Меха</li>
-                <li class="genre">Хоррор</li>
-                <li class="genre">Мистика</li>
-                <li class="genre">Музыка</li>
-                <li class="genre">Магия</li>
+            <ul id="genresList" class="genres-list">
             </ul>
+            <button id="loadMore" class="card-btn genre-btn">Показать еще</button>
         </div>
     </section>
     <section class="container">
-
+        asd
     </section>
 </body>
 

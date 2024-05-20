@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles.css">
+    <script defer src="src/scripts/search.js"></script>
+    <script defer src="src/scripts/searchResult.js"></script>
+    <title>Anispace</title>
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">ANISPACE</a>
+                <div class="search-container">
+                    <form id="searchForm">
+                        <input id="searchInput" class="nav-input" type="text">
+                    </form>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="login">Вход</div>
+            </div>
+        </nav>
+    </header>
+    <section class="container flex">
+        <div class="recently-box">
+            <h2 id="searchResultHeading"></h2>
+            <div id="searchResults" class="search-content"></div>
+        </div>
+
+        <div class="genres-box">
+            <h2 class="genre-title">Жанры</h2>
+            <ul id="genresList" class="genres-list">
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
