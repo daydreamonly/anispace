@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *,
 ::after,
@@ -7,6 +8,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Montserrat;
 }
 
 ul,
@@ -30,6 +40,18 @@ a {
     --white-color: #fff;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--dark-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--white-color);
+}
+
 body {
     background-color: var(--dark-color);
     color: var(--white-color);
@@ -51,7 +73,20 @@ body {
     align-items: center;
     color: var(--white-color);
     margin: 10px 0;
+    transition: 0.3s ease-in-out;
+}
+
+.fixed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    padding: 10px;
+    margin: 0;
+    background-color: var(--dark-color);
+    position: fixed;
     top: 0;
+    z-index: 100;
 }
 
 .nav-left {
@@ -70,12 +105,14 @@ body {
 .nav-input {
     width: 200px;
     padding: 5px;
+    padding-left: 10px;
     border-radius: 20px;
     transition: 0.3s ease-in-out;
 }
 
 .nav-input:focus {
     padding: 5px;
+    padding-left: 10px;
     width: 500px;
     border-radius: 10px;
     background-color: var(--dark-color);
@@ -199,6 +236,10 @@ body {
     position: relative;
 }
 
+.post-card:hover .post-title {
+    color: var(--primary-color);
+}
+
 .post-card:hover .post-info {
     display: flex;
 }
@@ -211,12 +252,15 @@ body {
     left: 0;
     padding: 10px;
     background-color: var(--dark-color);
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--primary-color-400);
     opacity: 0.9;
     flex-direction: column;
     display: none;
     z-index: 10;
     gap: 10px;
+    box-shadow: 0px 0px 35px 10px rgba(43, 43, 43, 1) inset;
+    -webkit-box-shadow: 0px 0px 35px 10px rgba(43, 43, 43, 1) inset;
+    -moz-box-shadow: 0px 0px 35px 10px rgba(43, 43, 43, 1) inset;
 }
 
 .info {
@@ -314,16 +358,21 @@ body {
 
 .content {
     padding: 20px;
+    transition: 0.3s ease-in-out;
 }
+
 
 .content:nth-child(odd) {
     background-color: var(--light-gray-color);
 }
 
+.content:hover {
+    border: 1px solid var(--white-color);
+}
 
 .card-img {
     width: 50px;
-    height: 50px;
+    height: 60px;
 }
 
 .card-info {
@@ -358,6 +407,7 @@ body {
 .recent-title {
     color: var(--primary-color);
     margin: 20px 0;
+    font-size: 24px;
 }
 
 .recently-box {
@@ -425,17 +475,19 @@ body {
 
 .control-box {
     display: flex;
+    width: 70vw;
     flex-direction: column;
     gap: 10px;
+    margin-left: 20px;
 }
 
 .video {
-    width: 70vw;
+    width: inherit;
     height: 60vh;
 }
 
 .controller {
-    max-width: 70vw;
+    max-width: inherit;
 }
 
 .episode-controll {
@@ -444,7 +496,7 @@ body {
 
 .episode-list {
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     white-space: nowrap;
 }
 
@@ -494,8 +546,24 @@ body {
 
 .anime-info {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     margin-bottom: 10px;
+}
+
+.anime-info>img {
+    width: 250px;
+}
+
+.anime-about {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.anime-desc {
+    max-height: 150px;
+    overflow: auto;
 }
 
 .search-content {
@@ -503,6 +571,10 @@ body {
     flex-wrap: wrap;
     width: 70vw;
     gap: 20px;
+}
+
+#searchResultHeading {
+    margin: 20px 0;
 }
 
 .search-card {
@@ -527,8 +599,77 @@ body {
     width: inherit;
 }
 
-#searchResultHeading {
-    margin: 20px 0;
+.burger-menu {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger-menu::before,
+.burger-menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white-color);
+    transition: 0.3s ease;
+}
+
+.burger-menu>span {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white-color);
+    top: 8px;
+}
+
+.burger-menu::before {
+    top: 1px;
+}
+
+.burger-menu::after {
+    bottom: 1px;
+}
+
+.burger-menu.burger-active::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.burger-active::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.burger-menu.burger-active>span {
+    display: none;
+}
+
+.burger-menu-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    background-color: var(--dark-color);
+    height: 100vh;
+    padding: 20px;
+}
+
+.burger-active {
+    display: flex;
+}
+
+.burger-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.burger-links>li {
+    width: 180px;
+    padding: 10px;
 }
 
 @media(max-width: 1440px) {
@@ -536,8 +677,9 @@ body {
         width: 1340px;
     }
 
-    .navbar {
-        margin: 10px;
+    .fixed {
+        padding: 20px;
+        margin: 0;
     }
 
     .rec-info {
@@ -567,16 +709,22 @@ body {
 
 @media(max-width: 768px) {
     h1 {
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .container {
         width: 100%;
         margin: 0 auto 20px auto;
+        padding: 0 20px;
     }
 
-    .navbar {
-        margin: 10px;
+    .burger-menu {
+        display: flex;
+    }
+
+    .fixed {
+        margin: 0;
+        right: 0;
     }
 
     .nav-logo {
@@ -594,7 +742,7 @@ body {
     }
 
     .login {
-        padding: 5px 10px;
+        display: none;
     }
 
     .rec-desc {
@@ -635,24 +783,29 @@ body {
         width: 150px;
     }
 
+    .trend-content {
+        overflow: auto;
+    }
+
+    .post-card:hover .post-info {
+        display: none;
+    }
+
     .trend-buttons {
         display: none;
     }
 
-    .grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .recent-title {
+    .grid-section {
         display: none;
     }
 
     .recent-content {
         justify-content: center;
+        gap: 40px;
     }
 
     .recently-box {
-        margin: 40px 0;
+        margin-bottom: 40px;
     }
 
     .genre-title {
@@ -663,19 +816,63 @@ body {
         grid-template-columns: repeat(4, 1fr);
     }
 
+    .watch-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .watch-info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .anime-info {
+        flex-direction: row;
+    }
+
+    .control-box {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .video {
+        width: inherit;
+        max-height: 50vh;
+        align-self: center;
+    }
+
+    .anime-title {
+        font-size: 20px;
+    }
+
+    .episode-input {
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .episode-controll {
+        width: inherit;
+    }
+
+    .genres-box {
+        display: none;
+    }
 }
 
 @media(max-width: 425px) {
-    h1 {
-        font-size: 16px;
-    }
-
     .nav-input {
         display: none;
     }
 
     .navbar {
         margin: 10px 0;
+    }
+
+    .fixed {
+        margin: 0;
     }
 
     .rec-info {
@@ -698,7 +895,20 @@ body {
         gap: 40px;
     }
 
+    .post-img {
+        width: 170px;
+        height: 220px;
+    }
+
     .genres-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .anime-info {
+        flex-direction: column;
+    }
+
+    .video {
+        height: 30vh;
     }
 }

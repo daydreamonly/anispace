@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles.css">
-    <!-- <script defer src="src/scripts/navbar.js"></script> -->
+    <script defer src="src/scripts/navbar.js"></script>
     <script defer src="src/scripts/fetchAnime.js"></script>
     <!-- <script defer src="src/scripts/scroll.js"></script> -->
     <script defer src="./src/scripts/search.js"></script>
     <script defer src="./src/scripts/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Anispace</title>
 </head>
 
@@ -19,9 +22,9 @@
 
 <body>
     <header class="container">
-        <nav class="navbar">
+        <nav id="navbar" class="navbar">
             <div class="nav-left">
-                <a href="index.html" class="nav-logo">ANISPACE</a>
+                <a href="index.html" class="nav-logo">Anispace</a>
                 <div class="search-container">
                     <form id="searchForm">
                         <input id="searchInput" class="nav-input" type="text">
@@ -30,6 +33,18 @@
             </div>
             <div class="nav-right">
                 <div class="login">Вход</div>
+                <div id="burgerMenu" class="burger-menu">
+                    <span></span>
+                </div>
+                <div id="burgerLinks" class="burger-menu-links">
+                    <ul class="burger-links">
+                        <li><a href="#">Добавленные</a></li>
+                        <li><a href="#">Онгоинг</a></li>
+                        <li><a href="#">Завершенные</a></li>
+                        <li><a href="#">Анонс</a></li>
+                        <li><a href="#">Жанры</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -150,28 +165,28 @@
         </div>
     </section>
 
-    <section class="container">
+    <section class="container grid-section">
         <div class="grid">
             <div class="grid-box">
                 <h3>Добавленные</h3>
                 <div id="addedBox">
                 </div>
-                <button class="card-btn">Смотреть еще &#10095;</button>
+                <button class="card-btn">Смотреть еще</button>
             </div>
             <div class="grid-box">
                 <h3>Онгоинг</h3>
                 <div id="ongoingBox"></div>
-                <button class="card-btn">Смотреть еще &#10095;</button>
+                <button class="card-btn">Смотреть еще</button>
             </div>
             <div class="grid-box">
                 <h3>Завершенные</h3>
                 <div id="completedBox"></div>
-                <button class="card-btn">Смотреть еще &#10095;</button>
+                <button class="card-btn">Смотреть еще</button>
             </div>
             <div class="grid-box">
                 <h3>Анонс</h3>
                 <div id="upcomingBox"></div>
-                <button class="card-btn">Смотреть еще &#10095;</button>
+                <button class="card-btn">Смотреть еще</button>
             </div>
         </div>
     </section>

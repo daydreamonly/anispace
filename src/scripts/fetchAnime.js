@@ -47,10 +47,10 @@ const createAnime = async (url, containerId, contentType) => {
                 } else if (contentType === 'grid'){
                     output += `
                         <div class="content">
-                            <div class="content-card">
+                            <a href='watch.html?mal_id=${mal_id}'  class="content-card">
                                 <img class="card-img" src="${jpg.image_url}" alt="${title}">
                                 <div class="card-info">
-                                    <a href='watch.html?mal_id=${mal_id}' class="card-title truncate-text-1">${title}</a>
+                                    <div class="card-title truncate-text-1">${title}</div>
                                     <p>Studio: ${studios[0].name}</p>
                                     <p>Episdoes: ${
                                         episodes == null
@@ -58,7 +58,7 @@ const createAnime = async (url, containerId, contentType) => {
                                             : `${episodes}ep`
                                     }</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     `
                 }

@@ -42,11 +42,10 @@ const animeInfo = async () => {
                         <li><span>Episodes:</span> ${
                             episodes == null ? "No info" : episodes
                         }</li>
+                        <div class="anime-desc truncate-text-vertical">${synopsis}</div>
                     </ul>
                 </div>
-                <div class="anime-desc truncate-text-vertical">
-                    ${synopsis}
-                </div>
+                
             </div>
             <div id="player" class="control-box">
                 <iframe class="video" src="${episodeShow[0].url}" frameborder="0"
