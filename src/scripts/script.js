@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const carousel = document.querySelector(".recommendation-carousel");
     let slides = Array.from(carousel.querySelectorAll(".recommendation"));
     let counter = 0;
-    
+
     function nextSlide() {
         if (counter < slides.length) {
             counter++;
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
             });
         }
     }
-    
+
     function prevSlide() {
         let isFirstSlide = false;
-    
+
         if (counter < slides.length && counter != 0) {
             isFirstSlide = true;
             counter--;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 slide.style.transform = `translateX(-${counter * 100}%)`;
             });
         }
-    
+
         if (!isFirstSlide) {
             counter = slides.length - 1;
             slides.forEach((slide) => {
@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
             });
         }
     }
-    
+
     nextBtn.addEventListener("click", nextSlide);
     prevBtn.addEventListener("click", prevSlide);
-    
-    // setInterval(() => {nextSlide()}, 5000);
+
+    setInterval(() => { nextSlide() }, 5000);
 })
 

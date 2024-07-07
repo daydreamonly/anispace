@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style -->
     <link rel="stylesheet" href="src/styles.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Script -->
     <script defer src="src/scripts/navbar.js"></script>
     <script defer src="src/scripts/fetchAnime.js"></script>
     <!-- <script defer src="src/scripts/scroll.js"></script> -->
     <script defer src="./src/scripts/search.js"></script>
     <script defer src="./src/scripts/script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Anispace</title>
 </head>
-
-<!-- ⢸⣿⣿⣿⣿⡿⠛⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣶⣾⣿⣿⡿⢋⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣿⣿⡿⠋⠴⠋⠀⠀⣠⣶⣿⣿⣷⣶⣶⣶⣶⣶⣿⣷⣦⣤⡀⠀⠀⠀⠀⠀⠀⠀ ⣿⡟⠁⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀ ⠟⠀⠀⠀⠀⠀⠀⠛⠉⠉⠉⠉⠙⢿⣿⣿⣿⠟⠛⠋⠉⠉⠛⠛⠁⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣶⣶⣶⣾⣿⣿⣿⣶⣶⣴⣶⣶⣶⣄⠀⢰⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⢀⣾⠟⣉⡙⢛⣿⣿⣿⣿⣿⣿⣿⣿⣛⡭⢍⡙⢿⣷⠀⡇⠀⠀⠀ ⠀⠀⠀⠀⠀⣼⣿⠘⠧⠀⣠⣟⣽⠋⢨⣿⡏⢻⣍⣛⣀⠠⣟⣰⣿⣿⣷⠀⠀⠀ ⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡇⠀⢸⣿⣇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀ ⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣧⡶⢿⣿⡿⢷⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀ ⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⡿⠛⠸⣿⠄⠿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀ ⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⠏⠀⣠⣤⣤⣤⡀⠙⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠉⠉⣿⣿⠁⠀⣸⡋⠀⠀⠉⢿⠄⠈⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠸⠗⠀⢠⣿⡇⠀⠀⠀⣾⣇⠀⢺⣿⠟⠉⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⣤⡀⠀⠀⢀⣧⢰⣄⠘⡷⠀
-            ⢸⣷⣙⡛⠛⠚⣻⣯⣿
- -->
 
 <body>
     <header class="container">
         <nav id="navbar" class="navbar">
-            <div class="nav-left">
+            <div class="nav-left font-roboto">
                 <a href="index.html" class="nav-logo">Anispace</a>
                 <div class="search-container">
                     <form id="searchForm">
@@ -32,11 +31,15 @@
                 </div>
             </div>
             <div class="nav-right">
-                <div class="login">Вход</div>
-                <div id="burgerMenu" class="burger-menu">
+                <div class="login font-roboto">Вход</div>
+
+                <button id="burgerMenu" class="burger-menu"><i class="fa-solid fa-bars"></i></button>
+                <button id="burgerClose" class="burger-close"><i class="fa-solid fa-xmark"></i></button>
+
+                <!-- <div id="burgerMenu" class="burger-menu">
                     <span></span>
-                </div>
-                <div id="burgerLinks" class="burger-menu-links">
+                </div> -->
+                <div id="burgerLinks" class="burger-menu-links font-roboto">
                     <ul class="burger-links">
                         <li><a href="#">Добавленные</a></li>
                         <li><a href="#">Онгоинг</a></li>
@@ -48,7 +51,7 @@
             </div>
         </nav>
 
-        <div class="recommendation-carousel">
+        <div class="recommendation-carousel font-roboto">
             <div class="recommendation">
                 <img class="rec-img" src="src/img/1.jpg" alt="">
                 <div class="rec-info">
@@ -134,7 +137,7 @@
         </div>
     </section> -->
 
-    <section class="container">
+    <section class="container font-roboto">
         <h1 class="trend-title">Популярные</h1>
         <div id="trendBox" class="trend-box">
             <div id="trendContent" class="trend-content"></div>
@@ -165,7 +168,7 @@
         </div>
     </section>
 
-    <section class="container grid-section">
+    <section class="container grid-section font-roboto">
         <div class="grid">
             <div class="grid-box">
                 <h3>Добавленные</h3>
@@ -190,7 +193,7 @@
             </div>
         </div>
     </section>
-    <section class="container flex">
+    <section class="container flex font-roboto">
         <div class="recently-box">
             <h2 class="recent-title">Онгоинг</h2>
             <div id="recentlyBox" class="recent-content">
@@ -203,9 +206,6 @@
             </ul>
             <button id="loadMore" class="card-btn genre-btn">Показать еще</button>
         </div>
-    </section>
-    <section class="container">
-        asd
     </section>
 </body>
 
